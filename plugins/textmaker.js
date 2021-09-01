@@ -273,7 +273,7 @@ Asena.addCommand({pattern: '2neon ?(.*)', fromMe: wk, dontAddCommandList: true},
     });
 }));
 Asena.addCommand({pattern: 'metalic ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
-    thiccysapi.textpro("https://photooxy.com/other-design/create-metallic-text-glow-online-188.html",
+    thiccysapi.photooxy("https://photooxy.com/other-design/create-metallic-text-glow-online-188.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 

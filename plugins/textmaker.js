@@ -273,7 +273,7 @@ Asena.addCommand({pattern: '2neon ?(.*)', fromMe: wk, dontAddCommandList: true},
     });
 }));
 Asena.addCommand({pattern: 'metalic ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
-    thiccysapi.photooxy("https://photooxy.com/other-design/create-metallic-text-glow-online-188.html",
+    thiccysapi.textpro("https://photooxy.com/other-design/create-metallic-text-glow-online-188.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -365,9 +365,9 @@ Asena.addCommand({pattern: 'camerica ?(.*)', fromMe: wk, dontAddCommandList: tru
         bottomText = split[1];
     } else {
         topText = match[1];
-        bottomText = 'ㅤ';
+        bottomText = '';
     }
-    thiccysapi.textpro("https://en.ephoto360.com/create-a-cinematic-captain-america-text-effect-online-715.html",
+    thiccysapi.ephoto("https://en.ephoto360.com/create-a-cinematic-captain-america-text-effect-online-715.html",
         [`${topText}`, `${bottomText}`]
         ).then(async (data) => { 
           try { 
@@ -377,8 +377,8 @@ Asena.addCommand({pattern: 'camerica ?(.*)', fromMe: wk, dontAddCommandList: tru
                   });
               };
 
-              await download(`${data}`, '/root/WhatsAsenaDuplicated/came.jpg', async() => {                          
-                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/came.jpg'), MessageType.image, { caption: Config.AFN })
+              await download(`${data}`, '/root/WhatsAsenaDuplicated/camerica.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/camerica.jpg'), MessageType.image, { caption: Config.AFN })
               })
           } catch(err) { 
               console.log(err)

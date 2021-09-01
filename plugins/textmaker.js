@@ -273,7 +273,7 @@ Asena.addCommand({pattern: '2neon ?(.*)', fromMe: wk, dontAddCommandList: true},
     });
 }));
 Asena.addCommand({pattern: 'metalic ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
-    thiccysapi.textpro("https://photooxy.com/other-design/create-metallic-text-glow-online-188.html",
+    thiccysapi.photooxy("https://photooxy.com/other-design/create-metallic-text-glow-online-188.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -367,7 +367,7 @@ Asena.addCommand({pattern: 'camerica ?(.*)', fromMe: wk, dontAddCommandList: tru
         topText = match[1];
         bottomText = '';
     }
-    thiccysapi.textpro("https://en.ephoto360.com/create-a-cinematic-captain-america-text-effect-online-715.html",
+    thiccysapi.en.ephoto360("https://en.ephoto360.com/create-a-cinematic-captain-america-text-effect-online-715.html",
         [`${topText}`, `${bottomText}`]
         ).then(async (data) => { 
           try { 

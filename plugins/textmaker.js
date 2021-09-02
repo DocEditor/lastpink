@@ -7,6 +7,7 @@ Don't use it for illegal purposes.
 */
 
 const thiccysapi = require('textmaker-thiccy'); // Import NPM Package
+const thiccysapi = require('ephoto-360'); // Import NPM Package
 
 const Asena = require('../events');
 const {MessageType, GroupSettingChange, Mimetype, MessageOptions} = require('@adiwajshing/baileys');
@@ -377,8 +378,8 @@ Asena.addCommand({pattern: 'camerica ?(.*)', fromMe: wk, dontAddCommandList: tru
                   });
               };
 
-              await download(`${data}`, '/root/WhatsAsenaDuplicated/camerica.jpg', async() => {                          
-                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/camerica.jpg'), MessageType.image, { caption: Config.AFN })
+              await download(`${data}`, '/root/WhatsAsenaDuplicated/came.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/came.jpg'), MessageType.image, { caption: Config.AFN })
               })
           } catch(err) { 
               console.log(err)

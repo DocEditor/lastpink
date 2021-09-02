@@ -63,6 +63,13 @@ Asena.addCommand({pattern: 'txtit$', fromMe: wk, desc: desc_msg}, (async (messag
     var t28 = ''
     var t29 = ''
     var t30 = ''
+    var t31 = ''
+    var t32 = ''
+    var t33 = ''
+    var t34 = ''
+    var t35 = ''
+    var t36 = ''
+    var t37 = ''
     if (Config.LANG == 'TR' || Config.LANG == 'AZ') {
         t1 = 'Şeytan Temalı Logo Yapar.' // https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html
         t2 = 'Ayı İkonu İçeren Logo Yapar.' // https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html
@@ -123,7 +130,14 @@ Asena.addCommand({pattern: 'txtit$', fromMe: wk, desc: desc_msg}, (async (messag
         t28 = 'Makes a Cemetery Themed Logo.' // https://photooxy.com/logo-and-text-effects/text-on-scary-cemetery-gate-172.html
         t29 = 'Makes a Cup Themed Logo.' // https://photooxy.com/logo-and-text-effects/put-text-on-the-cup-387.html
         t30 = 'Makes a metalic Logo.' // https://photooxy.com/other-design/create-metallic-text-glow-online-188.html
-        t31 = 'Makes a captain america Logo.' // https://en.ephoto360.com/create-a-cinematic-captain-america-text-effect-online-715.html
+        t31 = 'Makes a marvel studio red Logo.' // https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html
+        t32 = 'Makes a DEMON green Logo.' // https://textpro.me/create-green-horror-style-text-effect-online-1036.html
+        t33 = 'Makes a GLUE GUN Logo.' // https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html
+        t34 = 'Makes a Transformer Logo.' // https://textpro.me/create-a-transformer-text-effect-online-1035.html
+        t35 = 'Makes a STON TEXT Logo.' // https://textpro.me/create-a-stone-text-effect-online-982.html
+        t36 = 'Makes a UNDER WATER Logo.' // https://textpro.me/3d-underwater-text-effect-generator-online-1013.html
+        t37 = 'Makes a BLOOD Logo.' // https://textpro.me/horror-blood-text-effect-online-883.html
+        
     }
     var usage_cmd = ''
     var command_cmd = ''
@@ -164,6 +178,13 @@ Asena.addCommand({pattern: 'txtit$', fromMe: wk, desc: desc_msg}, (async (messag
         command_cmd + '```.cup``` \n' + desc_cmd + t29 + '_\n' + usage_cmd + '.cup pinky\n\n' +
         command_cmd + '```.cemetery``` \n' + desc_cmd + t28 + '_\n' + usage_cmd + '.cemetery pinky\n\n' +
         command_cmd + '```.metalic``` \n' + desc_cmd + t30 + '_\n' + usage_cmd + '.metalic pinky\n\n' +  
+        command_cmd + '```.3marvel``` \n' + desc_cmd + t31 + '_\n' + usage_cmd + '.3marvel pinky\n\n' +
+        command_cmd + '```.demon``` \n' + desc_cmd + t32 + '_\n' + usage_cmd + '.demon pinky\n\n' +
+        command_cmd + '```.glue``` \n' + desc_cmd + t33 + '_\n' + usage_cmd + '.glue pinky\n\n' +
+        command_cmd + '```.tranform``` \n' + desc_cmd + t34 + '_\n' + usage_cmd + '.tranform pinky\n\n' +
+        command_cmd + '```.underwater``` \n' + desc_cmd + t36 + '_\n' + usage_cmd + '.underwater pinky\n\n' +
+        command_cmd + '```.blood``` \n' + desc_cmd + t37 + '_\n' + usage_cmd + '.blood pinky\n\n' +
+        command_cmd + '```.ston``` \n' + desc_cmd + t35 + '_\n' + usage_cmd + '.ston doc;pinky\n\n' +
         command_cmd + '```.glitch``` \n' + desc_cmd + t14 + '_\n' + usage_cmd + '.glitch doc;pinky'
     await message.client.sendMessage(message.jid,msg, MessageType.text, { quoted: message.data })
 }));
@@ -180,6 +201,44 @@ Asena.addCommand({pattern: 'devil ?(.*)', fromMe: wk, dontAddCommandList: true},
 
               await download(`${data}`, '/root/WhatsAsenaDuplicated/devil.jpg', async() => {                          
                   await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/devil.jpg'), MessageType.image, { caption: Config.AFN })
+              })
+          } catch(err) { 
+              console.log(err)
+          } 
+    });
+}));
+Asena.addCommand({pattern: 'blood ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+    thiccysapi.textpro("https://textpro.me/horror-blood-text-effect-online-883.html",
+        `${match[1]}`
+        ).then(async (data) => { 
+          try { 
+              var download = async(uri, filename, callback) => {
+                  await request.head(uri, async(err, res, body) => {    
+                      await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+                  });
+              };
+
+              await download(`${data}`, '/root/WhatsAsenaDuplicated/blood.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/blood.jpg'), MessageType.image, { caption: Config.AFN })
+              })
+          } catch(err) { 
+              console.log(err)
+          } 
+    });
+}));
+Asena.addCommand({pattern: 'underwater ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+    thiccysapi.textpro("https://textpro.me/3d-underwater-text-effect-generator-online-1013.html",
+        `${match[1]}`
+        ).then(async (data) => { 
+          try { 
+              var download = async(uri, filename, callback) => {
+                  await request.head(uri, async(err, res, body) => {    
+                      await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+                  });
+              };
+
+              await download(`${data}`, '/root/WhatsAsenaDuplicated/under.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/under.jpg'), MessageType.image, { caption: Config.AFN })
               })
           } catch(err) { 
               console.log(err)
@@ -233,6 +292,34 @@ Asena.addCommand({pattern: 'wolf ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
+Asena.addCommand({pattern: 'ston ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+    var topText, bottomText; 
+    if (match[1].includes(';')) {
+        var split = match[1].split(';');
+        topText = split[0];
+        bottomText = split[1];
+    } else {
+        topText = match[1];
+        bottomText = '';
+    }
+    thiccysapi.textpro("https://textpro.me/create-a-stone-text-effect-online-982.html",
+        [`${topText}`, `${bottomText}`]
+        ).then(async (data) => { 
+          try { 
+              var download = async(uri, filename, callback) => {
+                  await request.head(uri, async(err, res, body) => {    
+                      await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+                  });
+              };
+
+              await download(`${data}`, '/root/WhatsAsenaDuplicated/ston.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/ston.jpg'), MessageType.image, { caption: Config.AFN })
+              })
+          } catch(err) { 
+              console.log(err)
+          } 
+    });
+}));
 Asena.addCommand({pattern: 'neon ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.textpro("https://textpro.me/create-a-futuristic-technology-neon-light-text-effect-1006.html",
         `${match[1]}`
@@ -246,6 +333,63 @@ Asena.addCommand({pattern: 'neon ?(.*)', fromMe: wk, dontAddCommandList: true}, 
 
               await download(`${data}`, '/root/WhatsAsenaDuplicated/neon.jpg', async() => {                          
                   await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/neon.jpg'), MessageType.image, { caption: Config.AFN })
+              })
+          } catch(err) { 
+              console.log(err)
+          } 
+    });
+}));
+Asena.addCommand({pattern: 'tranform ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+    thiccysapi.textpro("https://textpro.me/create-a-transformer-text-effect-online-1035.html",
+        `${match[1]}`
+        ).then(async (data) => { 
+          try { 
+              var download = async(uri, filename, callback) => {
+                  await request.head(uri, async(err, res, body) => {    
+                      await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+                  });
+              };
+
+              await download(`${data}`, '/root/WhatsAsenaDuplicated/tranf.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/tranf.jpg'), MessageType.image, { caption: Config.AFN })
+              })
+          } catch(err) { 
+              console.log(err)
+          } 
+    });
+}));
+Asena.addCommand({pattern: 'demon ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+    thiccysapi.textpro("https://textpro.me/create-green-horror-style-text-effect-online-1036.html",
+        `${match[1]}`
+        ).then(async (data) => { 
+          try { 
+              var download = async(uri, filename, callback) => {
+                  await request.head(uri, async(err, res, body) => {    
+                      await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+                  });
+              };
+
+              await download(`${data}`, '/root/WhatsAsenaDuplicated/demon.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/demon.jpg'), MessageType.image, { caption: Config.AFN })
+              })
+          } catch(err) { 
+              console.log(err)
+          } 
+    });
+}));
+Asena.addCommand({pattern: 'glue ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+    thiccysapi.textpro("https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html",
+        `${match[1]}`
+        ).then(async (data) => { 
+          try { 
+              var download = async(uri, filename, callback) => {
+                  await request.head(uri, async(err, res, body) => {    
+                      await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+                  });
+              };
+
+              await download(`${data}`, '/root/WhatsAsenaDuplicated/glue.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/glue.jpg'), MessageType.image, { caption: Config.AFN })
               })
           } catch(err) { 
               console.log(err)
@@ -444,6 +588,34 @@ Asena.addCommand({pattern: '2marvel ?(.*)', fromMe: wk, dontAddCommandList: true
 
               await download(`${data}`, '/root/WhatsAsenaDuplicated/mar2.jpg', async() => {                          
                   await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/mar2.jpg'), MessageType.image, { caption: Config.AFN })
+              })
+          } catch(err) { 
+              console.log(err)
+          } 
+    });
+}));
+Asena.addCommand({pattern: '3marvel ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+    var topText, bottomText; 
+    if (match[1].includes(';')) {
+        var split = match[1].split(';');
+        topText = split[0];
+        bottomText = split[1];
+    } else {
+        topText = match[1];
+        bottomText = 'ㅤ';
+    }
+    thiccysapi.textpro("https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html",
+        [`${topText}`, `${bottomText}`]
+        ).then(async (data) => { 
+          try { 
+              var download = async(uri, filename, callback) => {
+                  await request.head(uri, async(err, res, body) => {    
+                      await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+                  });
+              };
+
+              await download(`${data}`, '/root/WhatsAsenaDuplicated/3marvel.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/3marvel.jpg'), MessageType.image, { caption: Config.AFN })
               })
           } catch(err) { 
               console.log(err)

@@ -7,7 +7,6 @@ Don't use it for illegal purposes.
 */
 
 const thiccysapi = require('textmaker-thiccy'); // Import NPM Package
-const thiccysapi = require('ephoto-360'); // Import NPM Package
 
 const Asena = require('../events');
 const {MessageType, GroupSettingChange, Mimetype, MessageOptions} = require('@adiwajshing/baileys');
@@ -164,7 +163,6 @@ Asena.addCommand({pattern: 'txtit$', fromMe: wk, desc: desc_msg}, (async (messag
         command_cmd + '```.harry``` \n' + desc_cmd + t26 + '_\n' + usage_cmd + '.harry pinky\n\n' +
         command_cmd + '```.cup``` \n' + desc_cmd + t29 + '_\n' + usage_cmd + '.cup pinky\n\n' +
         command_cmd + '```.cemetery``` \n' + desc_cmd + t28 + '_\n' + usage_cmd + '.cemetery pinky\n\n' +
-        command_cmd + '```.camerica``` \n' + desc_cmd + t31 + '_\n' + usage_cmd + '.camerica doc;pinky\n\n' +  
         command_cmd + '```.metalic``` \n' + desc_cmd + t30 + '_\n' + usage_cmd + '.metalic pinky\n\n' +  
         command_cmd + '```.glitch``` \n' + desc_cmd + t14 + '_\n' + usage_cmd + '.glitch doc;pinky'
     await message.client.sendMessage(message.jid,msg, MessageType.text, { quoted: message.data })
@@ -352,34 +350,6 @@ Asena.addCommand({pattern: 'ninja ?(.*)', fromMe: wk, dontAddCommandList: true},
 
               await download(`${data}`, '/root/WhatsAsenaDuplicated/ninja.jpg', async() => {                          
                   await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/ninja.jpg'), MessageType.image, { caption: Config.AFN })
-              })
-          } catch(err) { 
-              console.log(err)
-          } 
-    });
-}));
-Asena.addCommand({pattern: 'camerica ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
-    var topText, bottomText; 
-    if (match[1].includes(';')) {
-        var split = match[1].split(';');
-        topText = split[0];
-        bottomText = split[1];
-    } else {
-        topText = match[1];
-        bottomText = '';
-    }
-    thiccysapi.ephoto("https://en.ephoto360.com/create-a-cinematic-captain-america-text-effect-online-715.html",
-        [`${topText}`, `${bottomText}`]
-        ).then(async (data) => { 
-          try { 
-              var download = async(uri, filename, callback) => {
-                  await request.head(uri, async(err, res, body) => {    
-                      await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
-                  });
-              };
-
-              await download(`${data}`, '/root/WhatsAsenaDuplicated/came.jpg', async() => {                          
-                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/came.jpg'), MessageType.image, { caption: Config.AFN })
               })
           } catch(err) { 
               console.log(err)
